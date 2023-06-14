@@ -1,13 +1,18 @@
 package com.example.onemore.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @Table(name = "account")
 public class account {
     @Id

@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class accountService {
+public class AccountService {
     private final AccountRepository accountRepository;
 
     @Autowired
-    public accountService(AccountRepository accountRepository) {
+    public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 

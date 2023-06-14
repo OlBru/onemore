@@ -2,6 +2,7 @@ package com.example.onemore.Controllers;
 
 
 import com.example.onemore.Repositories.AccountRepository;
+import com.example.onemore.Services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.onemore.models.account;
@@ -11,16 +12,13 @@ import java.util.List;
     @RequestMapping("/account")
     public class AccountController {
         private final AccountRepository accountRepository;
-        private final com.example.onemore.Services.accountService accountService;
+        private final AccountService accountService;
 
         @Autowired
-        public AccountController(com.example.onemore.Services.accountService accountService, AccountRepository accountRepository) {
+        public AccountController(AccountService accountService, AccountRepository accountRepository) {
             this.accountService = accountService;
             this.accountRepository = accountRepository;
         }
-
-        @GetMapping("/please")
-        public String hello(){return "hello world";}
 
         @GetMapping("/getall")
         public List<account> getAllAccounts() {

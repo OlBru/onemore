@@ -1,20 +1,19 @@
 package com.example.onemore.Services;
 
-import com.example.onemore.models.account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.onemore.models.holder;
-import com.example.onemore.Repositories.holderRepository;
+import com.example.onemore.Repositories.HolderRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class holderService {
-    private final holderRepository holderRepository;
+public class HolderService {
+    private final HolderRepository holderRepository;
 
     @Autowired
-    public holderService(holderRepository holderRepository) {
+    public HolderService(HolderRepository holderRepository) {
         this.holderRepository = holderRepository;
     }
 

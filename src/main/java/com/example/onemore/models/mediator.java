@@ -1,12 +1,16 @@
 package com.example.onemore.models;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
+import lombok.Setter;
 
 import java.util.List;
 
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @Table(name = "mediator")
 public class mediator {
 

@@ -3,21 +3,21 @@ package com.example.onemore.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.onemore.models.holder;
-import com.example.onemore.Services.holderService;
+import com.example.onemore.Services.HolderService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/holder")
 public class HolderController {
-    private final holderService holderService;
+    private final HolderService holderService;
 
     @Autowired
-    public HolderController(holderService holderService) {
+    public HolderController(HolderService holderService) {
         this.holderService = holderService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/getall")
     public List<holder> getAllHolders() {
         return holderService.getAllHolders();
     }

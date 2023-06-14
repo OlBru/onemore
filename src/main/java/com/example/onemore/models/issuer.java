@@ -1,10 +1,14 @@
 package com.example.onemore.models;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @Table(name = "issuer")
 public class issuer {
     @Id
