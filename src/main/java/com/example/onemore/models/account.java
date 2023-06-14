@@ -18,7 +18,7 @@ public class account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idof_account")
-    private Integer id;
+    public Integer id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idof_holder", referencedColumnName ="idof_holder")
@@ -35,12 +35,5 @@ public class account {
     @OneToMany(mappedBy = "account", cascade = CascadeType.REMOVE)
     private List<buysell> buysells;
 
-    public account(Integer id, com.example.onemore.models.holder holder, String type, Integer registrationnumber, List<buysell> buysells) {
-        this.id = id;
-        this.holder = holder;
-        this.type = type;
-        this.registrationnumber = registrationnumber;
-        this.buysells = buysells;
-    }
 }
 
