@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Management</title>
+  <style>
+    body {
+      background-color: #333;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Добро пожаловать, выберите действие:</h1>
+  <button onclick="location.href='/account/show'">Посмотреть все Аккаунты</button>
+  <button onclick="location.href='/buysell/show'">Посмотреть все Операции</button>
+  <button onclick="location.href='/issuer/show'">Посмотреть все Эмитенты</button>
+  <button onclick="location.href='/mediator/show'">Посмотреть всех Посредников</button>
+  <button onclick="location.href='/holder/show'">Посмотреть всех Держателей</button>
+  <button onclick="location.href='/papers/show'">Посмотреть все Ценные Бумаги</button>
+</div>
+</body>
+</html>

@@ -1,9 +1,12 @@
 package com.example.onemore.Controllers;
 
 import com.example.onemore.Services.PapersService;
+import com.example.onemore.models.account;
 import com.example.onemore.models.papers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -40,5 +43,11 @@ public class PapersController {
     @DeleteMapping("/{id}")
     public void deletePaper(@PathVariable Integer id) {
         papersService.deletePaper(id);
+    }
+
+    @GetMapping("/show")
+    public ModelAndView showAllPapers(Model model) {
+        List<papers> paperss = papersService.getAllPapers();
+        return new ModelAndView("papers_list").addObject("paperss", paperss);
     }
 }

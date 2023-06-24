@@ -50,22 +50,22 @@
 <body>
 <div class="container">
     <h1>Account Management</h1>
-    <button onclick="window.location.href='/account'">Show All Accounts</button>
+    <button onclick="location.href='/mainpage/show'">Вернуться назад</button>
     <table>
         <thead>
         <tr>
             <th>ID</th>
-            <th>Holder ID</th>
-            <th>Account Type</th>
-            <th>Registration Number</th>
+            <th>ID Держателя</th>
+            <th>Тип Аккаунта</th>
+            <th>Регистрационный номер</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="account : ${accounts}">
-            <td th:text="${account.idof_account}"></td>
-            <td th:text="${account.idof_holder}"></td>
-            <td th:text="${account.account_type}"></td>
-            <td th:text="${account.registration_number}"></td>
+            <td th:text="${account.id}"></td>
+            <td th:text="${account.getHolder().getIDofHolder()}"></td>
+            <td th:text="${account.type}"></td>
+            <td th:text="${account.registrationnumber}"></td>
         </tr>
         </tbody>
     </table>

@@ -8,10 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.example.onemore.models.account;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/account")
 public class AccountController {
     private final AccountRepository accountRepository;
@@ -49,10 +50,9 @@ public class AccountController {
     }
 
     @GetMapping("/show")
-    public String showAllAccounts(Model model) {
+    public ModelAndView showAllAccounts(Model model) {
         List<account> accounts = accountService.getAllAccounts();
-        model.addAttribute("account", accounts);
-        return "account_list"; // Имя представления (шаблона Thymeleaf)
+        return new ModelAndView("account_list").addObject("accounts", accounts);
     }
 
 }

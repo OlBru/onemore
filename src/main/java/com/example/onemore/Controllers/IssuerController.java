@@ -2,9 +2,12 @@ package com.example.onemore.Controllers;
 
 import com.example.onemore.Repositories.IssuerRepository;
 import com.example.onemore.Services.IssuerService;
+import com.example.onemore.models.holder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.example.onemore.models.issuer;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -50,4 +53,9 @@ public class IssuerController {
     public void deleteIssuer(@PathVariable Integer id) {
         issuerService.deleteIssuer(id);
     }
+
+    @GetMapping("/show")
+    public ModelAndView showAllHolders(Model model) {
+        List<issuer> issuers = issuerService.getAllIssuers();
+        return new ModelAndView("issuer_list").addObject("issuers", issuers);}
 }

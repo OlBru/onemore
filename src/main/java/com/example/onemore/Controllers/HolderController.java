@@ -1,9 +1,13 @@
 package com.example.onemore.Controllers;
 
+import com.example.onemore.models.buysell;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.example.onemore.models.holder;
 import com.example.onemore.Services.HolderService;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -41,4 +45,9 @@ public class HolderController {
     public void deleteHolder(@PathVariable Integer id) {
         holderService.deleteHolder(id);
     }
+
+    @GetMapping("/show")
+    public ModelAndView showAllHolders(Model model) {
+        List<holder> holders = holderService.getAllHolders();
+        return new ModelAndView("holder_list").addObject("holders", holders);}
 }

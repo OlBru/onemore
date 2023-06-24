@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holder Management</title>
+  <style>
+    body {
+      background-color: #333;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #444;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Holder Management</h1>
+  <button onclick="location.href='/mainpage/show'">Вернуться назад</button>
+  <table>
+    <thead>
+    <tr>
+      <th>ID Держателя</th>
+      <th>№ ИНН</th>
+      <th>Тип Посредника</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="holder : ${holders}">
+      <td th:text="${holder.IDofHolder}"></td>
+      <td th:text="${holder.NumbofINN}"></td>
+      <td th:text="${holder.Type}"></td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

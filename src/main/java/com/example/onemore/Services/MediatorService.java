@@ -1,9 +1,14 @@
 package com.example.onemore.Services;
 
 import com.example.onemore.Repositories.MediatorRepository;
+import com.example.onemore.models.account;
+import com.example.onemore.models.issuer;
 import com.example.onemore.models.mediator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +28,7 @@ public class MediatorService {
         return mediators;
     }
 
+
     public mediator getMediator(Integer id) {
         return mediatorRepository.findById(id).orElse(null);
     }
@@ -38,4 +44,5 @@ public class MediatorService {
     public void deleteMediator(Integer id) {
         mediatorRepository.deleteById(id);
     }
+
 }
