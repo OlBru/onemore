@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AccountRepository extends CrudRepository<account, Integer> {
+    account save(account account);
+    void delete(account account);
+    void deleteById(Integer id);
 }

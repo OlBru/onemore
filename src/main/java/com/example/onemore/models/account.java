@@ -16,17 +16,16 @@ import java.util.List;
 @Table(name = "account")
 public class account {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idof_account")
     public Integer id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idof_holder", referencedColumnName ="idof_holder")
+    @JoinColumn(name = "idof_holder", referencedColumnName = "idof_holder")
     @JsonBackReference
     private holder holder;
 
 
-    @Column(name = "account_type",columnDefinition = "varchar(50)")
+    @Column(name = "account_type", columnDefinition = "varchar(50)")
     private String type;
 
     @Column(name = "registration_number")
@@ -34,6 +33,7 @@ public class account {
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.REMOVE)
     private List<buysell> buysells;
-
 }
+
+
 

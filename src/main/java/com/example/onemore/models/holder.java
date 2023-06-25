@@ -15,7 +15,6 @@ import java.util.List;
 public class holder {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idof_holder")
     private Integer IDofHolder;
 
