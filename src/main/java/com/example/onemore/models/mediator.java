@@ -15,7 +15,6 @@ import java.util.List;
 public class mediator {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idof_mediator")
     private Integer IDofMediator;
     @Column(name = "inn")

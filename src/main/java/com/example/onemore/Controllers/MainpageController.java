@@ -11,10 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mainpage")
 public class MainpageController {
 
-    @GetMapping("/show")
+    @GetMapping("/mainpage_show")
     public ModelAndView showMainpage(Model model) {
         return new ModelAndView("mainpage");
     }

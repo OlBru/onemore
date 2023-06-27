@@ -15,9 +15,9 @@ import java.util.List;
 public class papers {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idof_papers")
     private Integer IDofPapers;
+
 
     @JoinColumn(name = "idof_issuer")
     private Integer IDofIssuer;
@@ -38,6 +38,7 @@ public class papers {
 
     @Column(name = "IDofParent")
     private Integer IDofParent;
+
     @OneToMany(mappedBy = "papers")
     private List<buysell> buysells;
 

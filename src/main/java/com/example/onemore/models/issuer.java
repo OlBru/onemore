@@ -12,7 +12,6 @@ import lombok.Setter;
 @Table(name = "issuer")
 public class issuer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idof_issuer")
     private Integer IDofIssuer;
 

@@ -19,7 +19,6 @@ import lombok.Setter;
 @Table(name = "buysell")
 public class buysell {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idof_operation")
     private Integer id;
 
@@ -39,11 +38,12 @@ public class buysell {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idof_papers")
-    private com.example.onemore.models.papers papers;
+    private papers papers;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idof_mediator")
-    private com.example.onemore.models.mediator mediator;
+    private mediator mediator;
+
 
 }

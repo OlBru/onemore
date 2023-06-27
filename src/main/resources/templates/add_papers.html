@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account Management - Add Account</title>
+  <title>Papers Management - Add Paper</title>
   <style>
     body {
       background-color: #333;
@@ -64,19 +64,31 @@
 </head>
 <body>
 <div class="container">
-  <h1>Account Management - Add Account</h1>
-  <form th:method="get" th:action="@{/add_account}">
-    <label for="id">ID аккаунта:</label>
-    <input type="text" id="id" th:name="id" required>
+  <h1>Papers Management - Add Paper</h1>
+  <form th:method="get" th:action="@{/add_papers}">
+    <label for="IDofPapers">ID Бумаги:</label>
+    <input type="text" id="IDofPapers" th:name="IDofPapers" required>
 
-    <label for="holder">ID держателя:</label>
-    <input type="text" id="holder" th:name="holder" required>
+    <label for="IDofIssuer">ID Эмитента:</label>
+    <input type="text" id="IDofIssuer" th:name="IDofIssuer" required>
 
-    <label for="type">Тип аккаунта:</label>
-    <input type="text" id="type" th:name="type" required>
+    <label for="Type">Тип Бумаги:</label>
+    <input type="text" id="Type" th:name="Type" required>
 
-    <label for="registrationnumber">Регистрационный номер:</label>
-    <input type="text" id="registrationnumber" th:name="registrationnumber" required>
+    <label for="Nominal">Номинал:</label>
+    <input type="text" id="Nominal" th:name="Nominal" required>
+
+    <label for="ReleaseDate">Дата Выпуска:</label>
+    <input type="text" id="ReleaseDate" th:name="ReleaseDate" required>
+
+    <label for="Capital">Капитал:</label>
+    <input type="text" id="Capital" th:name="Capital" required>
+
+    <label for="IssueForm">Форма выпуска:</label>
+    <input type="text" id="IssueForm" th:name="IssueForm" required>
+
+    <label for="IDofParent">ID Родителя:</label>
+    <input type="text" id="IDofParent" th:name="IDofParent" required>
 
     <button type="submit">Добавить</button>
   </form>

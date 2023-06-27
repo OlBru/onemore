@@ -45,12 +45,25 @@
             border: none;
             cursor: pointer;
         }
+
+        .action-buttons {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .action-buttons button {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>Account Management</h1>
-    <button onclick="location.href='/mainpage/show'">Вернуться назад</button>
+    <div class="action-buttons">
+        <button onclick="location.href='/mainpage_show'">Вернуться назад</button>
+        <button onclick="location.href='/delete_account'">Удалить аккаунт</button>
+        <button onclick="location.href='/add_account'">Добавить аккаунт</button>
+    </div>
     <table>
         <thead>
         <tr>

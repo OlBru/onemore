@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping("/holder")
 public class HolderController {
     private final HolderService holderService;
 
@@ -21,32 +20,32 @@ public class HolderController {
         this.holderService = holderService;
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getallholder")
     public List<holder> getAllHolders() {
         return holderService.getAllHolders();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getholder{id}")
     public holder getHolder(@PathVariable Integer id) {
         return holderService.getHolder(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/addholder")
     public void addHolder(@RequestBody holder holder) {
         holderService.addHolder(holder);
     }
 
-    @PutMapping("")
+    @PutMapping("/updateholder")
     public void updateHolder(@RequestBody holder holder) {
         holderService.updateHolder(holder);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteholder{id}")
     public void deleteHolder(@PathVariable Integer id) {
         holderService.deleteHolder(id);
     }
 
-    @GetMapping("/show")
+    @GetMapping("/show_holder")
     public ModelAndView showAllHolders(Model model) {
         List<holder> holders = holderService.getAllHolders();
         return new ModelAndView("holder_list").addObject("holders", holders);}

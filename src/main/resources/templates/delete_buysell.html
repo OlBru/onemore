@@ -62,12 +62,12 @@
 </head>
 <body>
 <div class="container">
-  <h1>Удалить аккаунт</h1>
-  <form th:method="get" th:action="@{/delete_account}">
-    <label for="id">ID аккаунта:</label>
+  <h1>Удалить операцию</h1>
+  <form th:method="get" th:action="@{/delete_buysell}">
+    <label for="id">ID операции:</label>
     <input type="text" id="id" th:name="id" required>
     <br> <!-- Добавлен перенос строки -->
-    <input type="submit" value="Удалить аккаунт">
+    <input type="submit" value="Удалить операцию">
   </form>
 </div>
 </body>

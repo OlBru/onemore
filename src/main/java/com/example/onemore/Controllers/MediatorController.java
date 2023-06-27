@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mediator")
 public class MediatorController {
     private final MediatorRepository mediatorRepository;
     private final MediatorService mediatorService;
@@ -28,31 +27,31 @@ public class MediatorController {
         return "Hello, World!";
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getallmediator")
     public List<mediator> getAllMediators() {
         return mediatorService.getAllMediators();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getmediator{id}")
     public mediator getMediator(@PathVariable Integer id) {
         return mediatorService.getMediator(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/createmediator")
     public void createMediator(@RequestBody mediator mediator) {
         mediatorService.addMediator(mediator);
     }
 
-    @PutMapping("")
+    @PutMapping("/updatemediator")
     public void updateMediator(@RequestBody mediator mediator) {
         mediatorService.updateMediator(mediator);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletemediator{id}")
     public void deleteMediator(@PathVariable Integer id) {
         mediatorService.deleteMediator(id);
     }
-    @GetMapping("/show")
+    @GetMapping("/show_mediator")
     public ModelAndView showAllMediators(Model model) {
         List<mediator> mediators = mediatorService.getAllMediators();
         return new ModelAndView("mediator_list").addObject("mediators", mediators);}

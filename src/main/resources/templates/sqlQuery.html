@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account Management - Add Account</title>
+  <title th:text="${pageTitle}">SQL Query Page</title>
   <style>
     body {
       background-color: #333;
@@ -20,24 +20,24 @@
     h1 {
       text-align: center;
       margin-bottom: 20px;
+      font-family: 'Bebas Neue', cursive;
     }
 
     form {
+      text-align: center;
       margin-bottom: 20px;
     }
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input[type="text"] {
+    textarea {
       width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      resize: vertical;
     }
 
-    button {
+    input[type="submit"] {
       padding: 10px 20px;
       background-color: #4CAF50;
       color: #fff;
@@ -60,29 +60,34 @@
     th {
       background-color: #444;
     }
+
+    h2 {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
 <div class="container">
-  <h1>Account Management - Add Account</h1>
-  <form th:method="get" th:action="@{/add_account}">
-    <label for="id">ID аккаунта:</label>
-    <input type="text" id="id" th:name="id" required>
-
-    <label for="holder">ID держателя:</label>
-    <input type="text" id="holder" th:name="holder" required>
-
-    <label for="type">Тип аккаунта:</label>
-    <input type="text" id="type" th:name="type" required>
-
-    <label for="registrationnumber">Регистрационный номер:</label>
-    <input type="text" id="registrationnumber" th:name="registrationnumber" required>
-
-    <button type="submit">Добавить</button>
+  <h1>Введите запрос на SQL языке</h1>
+  <form action="/execute-query" method="POST">
+    <textarea name="sqlQuery" rows="5" cols="50"></textarea>
+    <br>
+    <input type="submit" value="Execute">
   </form>
-
-  <button onclick="location.href='/mainpage_show'">Вернуться назад</button>
-
+  <br>
+  <h2>Query Results:</h2>
+  <table th:if="${queryResult != null}">
+    <thead>
+    <tr>
+      <th th:each="column : ${columnHeaders.getColumns()}" th:text="${column}"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${queryResult.rows}">
+      <td th:each="cell : ${row}" th:text="${cell}"></td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 </body>
 </html>
